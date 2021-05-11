@@ -6,7 +6,7 @@ class launcher {
             stiffness: 0.004,
         }
         this.pointB = pointB;
-        this.lanch = Constraint.create(options);
+        this.launch = Constraint.create(options);
         World.add(world, this.launch)
     }
 
