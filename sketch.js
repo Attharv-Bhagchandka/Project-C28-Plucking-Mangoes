@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -9,7 +8,8 @@ const Constraint=Matter.Constraint;
 var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
 var world,boy;
-var launch, force;
+var launchingforce=100;
+var launch;
 
 
 function preload(){
@@ -84,17 +84,17 @@ function draw() {
 }
 
 function mouseDragged(){
-  Matter.Body.setPosition(stone.body, {x:mouseX,y:mouseY});
+  Matter.Body.setPosition(stoneObj.body, {x:mouseX,y:mouseY});
 }
 
 function mouseReleased(){
-  launcher.fly();
+  launch.fly();
 }
 
 function keyPressed(){
-  if(keyCode == 32){
+  if(keyCode === 32){
     Matter.Body.setPosition(stoneObj.body, {x:235, y:420})
-    launcher.attach(stoneObj.body);
+    launch.attach(stoneObj.body);
   }
 }
 
